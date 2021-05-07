@@ -81,10 +81,10 @@ $ py -m pip install pytz==2021.1
 $ py -m pip install sqlparse==0.4.1
 
 # Migrate
-py package.py migrate
+py manage.py migrate
 
 # Run the project
-$ py package.py runserver
+$ py manage.py runserver
 
 
 # The server will initialize in the <http://localhost:3000>
