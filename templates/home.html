@@ -4,11 +4,10 @@
 
 {% block content %}
 {% if user.is_authenticated %}    
-<h3>Hi {{user.username}} </h3>
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
+<div>Dashboard</div>
 {% else %}
-    <h3>You are not logged in! </br></h3>
-    <hr>
-    Login <a href="{% url 'login' %}">here</a>
+    <h3>Welcome to Scoolite Ims</br></h3>
+    <blockquote>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla possimus esse atque totam consectetur modi nisi autem ullam cum! Suscipit!</blockquote>
+    
 {% endif %}
 {% endblock  %}
