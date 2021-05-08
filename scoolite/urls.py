@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+import setup.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('django.contrib.auth.urls')), #Added for user authentication
     path('', TemplateView.as_view(template_name='home.html'), name='home'), 
+    path('streams/', TemplateView.as_view(template_name='stream_view.html'), name='streams'), 
+    path('stream/',setup.views.streamDetails, name='stream'),
 ]

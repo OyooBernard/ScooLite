@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Page {% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}    
+<h3>Streams Registered</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Stream</th>
+                <th>Abbreviation</th>
+            </tr>
+        </thead>
+        {% for stream in streams%}
+        <tbody>
+            <tr>
+                <td>{{stream.name|upper}}</td>
+                <td>{{stream.abbr|upper}}</td>
+              </tr>
+        </tbody>
+        
+        {% endfor %}
+      </table> 
+   
+{% else %}
+    <h3>You are not logged in! </br></h3>
+    <hr>
+    Login <a href="{% url 'login' %}">here</a>
+{% endif %}
+{% endblock  %}

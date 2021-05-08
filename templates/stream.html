@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Home Page {% endblock %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <form action="/stream/" method="post">
+        {% csrf_token %}
+        <table>
+        {{form.as_table}}
+        </table>
+        <input type="submit" class="btn btn-primary" value="submit">
+    </form>
+{% else %}
+    <h3>You are not logged in! </br></h3>
+    <hr>
+    Login <a href="{% url 'login' %}">here</a>
+{% endif %}
+{% endblock  %}

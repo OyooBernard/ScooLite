@@ -14,23 +14,23 @@ YEARS = (
 )
 # Create your models here.
 class Stream(models.Model):
-    name = models.CharField(max_length=50)
-    abbr = models.CharField(max_length=10) #abbreviation or short name
+    name = models.CharField(max_length=50, unique=True)
+    abbr = models.CharField(max_length=10, unique=True) #abbreviation or short name
 
 class Hostel(models.Model):
-    name = models.CharField(max_length=50)
-    abbr = models.CharField(max_length=10)
+    name = models.CharField(max_length=50, unique=True)
+    abbr = models.CharField(max_length=10, unique=True)
 
 class  Title(models.Model):
-    name = models.CharField(max_length=30)
-    abbr = models.CharField(max_length=5)
+    name = models.CharField(max_length=30, unique=True)
+    abbr = models.CharField(max_length=5, unique=True)
 
 class Designation(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, unique=True)
 
 class TermYear(models.Model):
-    term = models.CharField(max_length=1, choices=TERMS)
-    year = models.CharField(max_length=4, choices=YEARS)
+    term = models.CharField(max_length=1, choices=TERMS, unique=True)
+    year = models.CharField(max_length=4, choices=YEARS, unique=True)
     
 class OpeningClosing(models.Model):
     opening = models.DateField()
