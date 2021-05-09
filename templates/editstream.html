@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}Add Stream {% endblock %}
+{% block title %}Edit Stream {% endblock %}
 
 {% block content %}
 {% if user.is_authenticated %}
-<h3>Register Stream</h3><hr/>
-    <form action="/stream/" method="post">
-        {% csrf_token %}
-        <table>
+<h3>Edit Stream</h3><hr/>
+    <form action="/editstream/{{streams.id}}/" method="post">
+        {% csrf_token %}     
+        <table>         
             {{form.as_table}}
         </table>
         <hr/>

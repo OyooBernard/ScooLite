@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Home Page {% endblock %}
+{% block title %}View Streams {% endblock %}
 
 {% block content %}
 
@@ -13,11 +13,15 @@
                 <th>Abbreviation</th>
             </tr>
         </thead>
-        {% for stream in streams%}
+        {% for stream in streams %}
         <tbody>
             <tr>
                 <td>{{stream.name|upper}}</td>
                 <td>{{stream.abbr|upper}}</td>
+                <td>  
+                    <a href="/editstream/{{ stream.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+                    <a href="/deletestream/{{ stream.id }}"><span class="glyphicon glyphicon-remove" >Delete</span></a>  
+                </td>  
               </tr>
         </tbody>
         
